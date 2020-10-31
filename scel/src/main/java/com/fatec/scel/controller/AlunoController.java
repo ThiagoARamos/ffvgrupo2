@@ -1,7 +1,5 @@
 package com.fatec.scel.controller;
-/*
- * Classe Controller
- */
+
 import javax.validation.Valid;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -46,8 +44,8 @@ public class AlunoController {
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
-	@GetMapping("/delete/{ra}")
-	public ModelAndView excluirNoFormDeConsultaTodosAlunos(@PathVariable("ra") Long id) {
+	@GetMapping("/delete/{id}")
+	public ModelAndView excluirNoFormDeConsultaTodosAlunos(@PathVariable("id") Long id) {
 		servico.deleteById(id);
 		ModelAndView modelAndView = new ModelAndView("consultarAluno");
 		modelAndView.addObject("alunos", servico.findAll());
@@ -77,8 +75,8 @@ public class AlunoController {
 		return modelAndView;
 	}
 
-	@PostMapping("/update/{ra}")
-	public ModelAndView atualizaAluno(@PathVariable("ra") Long id, @Valid Aluno aluno, BindingResult result) {
+	@PostMapping("/update/{id}")
+	public ModelAndView atualizaAluno(@PathVariable("id") Long id, @Valid Aluno aluno, BindingResult result) {
 		if (result.hasErrors()) {
 			aluno.setId(id);
 			return new ModelAndView("atualizarAluno");

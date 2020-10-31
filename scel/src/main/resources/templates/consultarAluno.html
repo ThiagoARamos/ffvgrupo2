@@ -54,7 +54,7 @@
 
 						<tr>
 
-							<th>ID</th>
+
 
 							<th>Ra</th>
 
@@ -64,7 +64,7 @@
 
 							<th>Cep</th>
 
-							<th>Endereço</th>
+							<th>Endereco</th>
 
 						</tr>
 
@@ -74,7 +74,7 @@
 
 						<tr th:each="aluno : ${alunos}">
 
-							<td th:text="${aluno.id}"></td>
+
 
 							<td th:text="${aluno.ra}"></td>
 
@@ -93,7 +93,7 @@
 									<a class="btn btn-sm btn-primary"
 										th:href="@{/alunos/edit/{ra}(ra=${aluno.ra})}">Editar</a> <a
 										class="delete btn btn-sm btn-danger"
-										th:href="@{/aluno/delete/{id}(id=${aluno.id})}">Excluir</a>
+										th:href="@{/alunos/delete/{ra}(id=${aluno.ra})}">Excluir</a>
 
 								</div>
 

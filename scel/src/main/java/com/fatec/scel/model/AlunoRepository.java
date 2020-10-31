@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.query.*;
 public interface AlunoRepository extends CrudRepository<Aluno, Long> {
 
 	@Query("SELECT a FROM Aluno a WHERE a.nome = nome")
-	public Aluno findByName(@Param("nome") String nome);
+	public Aluno findByName( String nome);
 	
 	@Query("SELECT a FROM Aluno a WHERE a.ra = ra")
 	public Aluno findByRa(@Param("ra") String ra);

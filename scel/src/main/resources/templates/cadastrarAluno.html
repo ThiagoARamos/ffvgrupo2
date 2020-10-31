@@ -54,7 +54,7 @@
 
 				<div class="col-md-8">
 
-					<form action="#" th:action="@{/Alunos/save}" th:object="${aluno}"
+					<form action="#" th:action="@{/alunos/save}" th:object="${aluno}"
 						method="post">
 
 						<div class="row">
@@ -62,9 +62,9 @@
 							<div class="form-group col-md-20">
 
 								<label for="ra" class="col-form-label">RA</label> <input
-									type="text" th:field="*{id}" class="form-control" id="id"
+									type="text" th:field="*{ra}" class="form-control" id="ra"
 									placeholder="ra"> <span
-									th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+									th:if="${#fields.hasErrors('ra')}" th:errors="*{ra}"
 									class="text-danger"> </span>
 
 							</div>
@@ -117,7 +117,7 @@
 
 							<div class="form-group col-md-20">
 
-								<label for="endereço" class="col-form-label">ENDEREÇO</label> <input
+								<label for="endereco" class="col-form-label">ENDERECO</label> <input
 									type="text" th:field="*{endereco}" class="form-control"
 									id="endereço" placeholder="endereco"> <span
 									th:if="${#fields.hasErrors('endereco')}" th:errors="*{endereco}"
@@ -129,7 +129,7 @@
 
 								<input type="submit" class="btn btn-primary"
 									value="Cadastrar Aluno"> <a type="submit"
-									class="btn btn-primary" th:href="@{/Alunos/consultar}">
+									class="btn btn-primary" th:href="@{/alunos/consultar}">
 
 									Lista de Alunos</a> <input type="button" class="btn btn-primary"
 									onclick="consulta()" value="Alert inline"> <input
