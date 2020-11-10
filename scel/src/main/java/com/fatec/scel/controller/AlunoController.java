@@ -39,7 +39,7 @@ public class AlunoController {
 
 	@GetMapping("/edit/{ra}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarAluno(@PathVariable("ra") String ra) {
-		ModelAndView modelAndView = new ModelAndView("atualizaAluno");
+		ModelAndView modelAndView = new ModelAndView("atualizarAluno");
 		modelAndView.addObject("aluno", servico.findByRa(ra)); // o repositorio e injetado no controller
 		return modelAndView; // addObject adiciona objetos para view
 	}
