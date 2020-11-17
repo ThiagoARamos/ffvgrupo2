@@ -31,14 +31,14 @@ public class LivroController {
 	@GetMapping("/cadastrar")
 	public ModelAndView retornaFormDeCadastroDe(Livro livro) {
 		ModelAndView mv = new ModelAndView("cadastrarLivro");
-		mv.addObject("livro", livro);
+		mv.addObject("livros", livro);
 		return mv;
 	}
 
 	@GetMapping("/edit/{isbn}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarLivro(@PathVariable("isbn") String isbn) {
 		ModelAndView modelAndView = new ModelAndView("atualizarLivro");
-		modelAndView.addObject("livro", servico.findByIsbn(isbn)); // o repositorio e injetado no controller
+		modelAndView.addObject("livros", servico.findByIsbn(isbn)); // o repositorio e injetado no controller
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
