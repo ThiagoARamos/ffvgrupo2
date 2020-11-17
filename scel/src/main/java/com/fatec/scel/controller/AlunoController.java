@@ -23,7 +23,7 @@ public class AlunoController {
 	@Autowired
 	AlunoServico servico;
 
-	@GetMapping("/consulta")
+	@GetMapping("/consultar")
 	public ModelAndView retornaFormDeConsultaTodosAlunos() {
 		ModelAndView modelAndView = new ModelAndView("consultarAluno");
 		modelAndView.addObject("alunos", servico.findAll());
@@ -33,7 +33,7 @@ public class AlunoController {
 	@GetMapping("/cadastrar")
 	public ModelAndView retornaFormCadastraDe(Aluno aluno) {
 		ModelAndView mv = new ModelAndView("cadastrarAluno");
-		mv.addObject("aluno", aluno);
+		mv.addObject("alunos", aluno);
 		return mv;
 	}
 
@@ -65,6 +65,7 @@ public class AlunoController {
 					aluno.setEndereco(endereco);
 					servico.save(aluno);
 					modelAndView.addObject("alunos", servico.findAll());
+
 				}
 			} catch (Exception e) { // captura validacoes na camada de persistencia
 				modelAndView.setViewName("cadastrarAluno");
@@ -76,9 +77,9 @@ public class AlunoController {
 	}
 
 	@PostMapping("/update/{id}")
-	public ModelAndView atualizaAluno(@PathVariable("id") Long id, @Valid Aluno aluno, BindingResult result) {
+	public ModelAndView atualizarAluno(@PathVariable("id") Long id, @Valid Aluno aluno, BindingResult result) {
 		if (result.hasErrors()) {
-			aluno.setId(id);
+			// aluno.setId(id);
 			return new ModelAndView("atualizarAluno");
 		}
 		Aluno umAluno = servico.findById(id);
