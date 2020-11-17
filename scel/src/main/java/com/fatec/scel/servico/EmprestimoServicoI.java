@@ -3,6 +3,7 @@ package com.fatec.scel.servico;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fatec.scel.controller.EmprestimoController;
@@ -31,7 +32,8 @@ public class EmprestimoServicoI implements EmprestimoServico {
 					&& existeAlunoLivro(emprestimo.getRa(), emprestimo.getIsbn()) == true) {
 				logger.info(
 						"======================> achou livro/aluno no db e nao existe emprestimo em aberto/cadastrado");
-				emprestimo.setDataEmprestimo();
+				DateTime dataAtual = new DateTime();
+				emprestimo.setDataEmprestimo(dataAtual);
 				emprestimoRepository.save(emprestimo);
 				mensagem = "Emprestimo registrado";
 			} else {

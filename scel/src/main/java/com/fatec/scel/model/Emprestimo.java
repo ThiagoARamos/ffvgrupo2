@@ -63,10 +63,6 @@ public class Emprestimo {
 	public String getDataEmprestimo() {
 		return dataEmprestimo;
 	}
-	
-	public void setDataEmprestimo() {
-		
-	}
 
 	public void setDataEmprestimo(DateTime dataAtual) {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("YYYY/MM/dd");
@@ -122,4 +118,5 @@ public class Emprestimo {
 		int dias = Days.daysBetween(dataAtual, dataDevolucaoPrevista).getDays();
 		return dias;
 	}
+
 }
