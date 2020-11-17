@@ -46,4 +46,11 @@ public class EmprestimoController {
 		modelAndView.addObject("emprestimos", emprestimoServico.findAll());
 		return modelAndView;
 	}
+
+	@GetMapping("/consultar")
+	public ModelAndView retornaFormDeConsultaTodosEmprestimos() {
+		ModelAndView modelAndView = new ModelAndView("consultarEmprestimo");
+		modelAndView.addObject("emprestimos", emprestimoServico.findAll());
+		return modelAndView;
+	}
 }
