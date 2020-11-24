@@ -74,9 +74,7 @@ public class Emprestimo {
 		return dataDevolucao;
 	}
 
-	public void setDataDevolucao(String dataDevolucao) {
-		this.dataDevolucao = dataDevolucao;
-	}
+	
 
 	public String getDataDevolucaoPrevista() {
 		return dataDevolucaoPrevista;

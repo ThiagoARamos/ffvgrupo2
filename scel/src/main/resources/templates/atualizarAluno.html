@@ -29,7 +29,7 @@
 						th:object="${aluno}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
-								<label for="ra" class="col-form-label">Ra</label> <input
+								<label for="ra" class="col-form-label">RA</label> <input
 									type="text" th:field="*{ra}" class="form-control" id="ra"
 									placeholder="ra"> <span
 									th:if="${#fields.hasErrors('ra')}" th:errors="*{ra}"
@@ -47,27 +47,23 @@
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">Email</label> <input
+								<label for="email" class="col-form-label">E-mail</label> <input
 									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
+									placeholder="E-mail"> <span
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="text-danger"></span>
 							</div>
-						</div>
-						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="cep" class="col-form-label">Cep</label> <input
-									type="cep" th:field="*{cep}" class="form-control" id="cep"
-									placeholder="Cep"> <span
+								<label for="cep" class="col-form-label">CEP</label> <input
+									type="text" th:field="*{cep}" class="form-control" id="cep"
+									placeholder="CEP"> <span
 									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
 									class="text-danger"></span>
 							</div>
-						</div>
-						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="endereco" class="col-form-label">Endereco</label> <input
-									type="endereco" th:field="*{endereco}" class="form-control"
-									id="endereco" placeholder="Endereco"> <span
+								<label for="endereco" class="col-form-label">Endereço</label> <input
+									type="text" th:field="*{endereco}" class="form-control"
+									id="endereco" placeholder="endereco"> <span
 									th:if="${#fields.hasErrors('endereco')}"
 									th:errors="*{endereco}" class="text-danger"></span>
 							</div>
